@@ -1,13 +1,9 @@
 
 import time
-#try:
-#    import ujson as json
-#except ImportError:
 import json
 import logging
 
 from path import Path
-
 
 class MetricsLogger(object):
 
@@ -39,7 +35,6 @@ def read_records(fname):
             if not line.endswith('\n'):
                 skipped += 1
                 continue
-            #records.append(json.loads(line.strip(), precise_float=True))
             yield json.loads(line.strip())
         if skipped > 0:
             logging.warn('skipped {} lines'.format(skipped))
