@@ -83,6 +83,13 @@ for classifying instances from the test set. It performs
 simple evaluation and optionally saves the predictions in an 
 `.npz` file.
 
+If you don't want to train your own, you can use the
+`--weights` option with the
+an example result of running this script, 
+`shapenet10_weights.npz`. This file was committed with
+[Git LFS](https://git-lfs.github.com/), so you
+can use that, or simply download the raw version 
+from github. 
 
 
 ### Visualize
