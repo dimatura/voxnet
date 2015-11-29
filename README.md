@@ -59,8 +59,7 @@ python train.py config/shapenet10.py shapenet10_train.tar
 ```
 
 `config/shapenet10.py` stores the model architecture
-and hyperparameters related to training. 
-
+and hyperparameters related to training as Python code.
 `train.py` loads this code dynamically, compiles the theano model,
 and begins training with the data from `shapenet10_train.tar`.
 The learned weights are periodically saved to `weights.npz`.
@@ -106,3 +105,10 @@ render them with a very very inefficient renderer, and create
 a small page called `out.html` with the renders,
 the ground truth and the predicted label (see example above).
 
+
+## TODO 
+
+* Cleaning up
+* Testing
+* More options
+* Better visualization
