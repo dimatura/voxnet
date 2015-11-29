@@ -104,6 +104,7 @@ This will randomly select 10 instances from the test set,
 render them with a very very inefficient renderer, and create
 a small page called `out.html` with the renders,
 the ground truth and the predicted label (see example above).
+Requires [gizeh](https://github.com/Zulko/gizeh).
 
 
 ## TODO 
