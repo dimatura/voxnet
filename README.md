@@ -50,7 +50,6 @@ consisting of zlib-compressed `.npy` files. Simple and effective!
 ### Train model
 
 We will be messy and do everything in the `scripts/` directory.
-This are mostly meant to be an example.
 
 
 ```sh
@@ -106,6 +105,17 @@ a small page called `out.html` with the renders,
 the ground truth and the predicted label (see example above).
 Requires [gizeh](https://github.com/Zulko/gizeh).
 
+## Reference
+
+```
+@inproceedings{maturana_iros_2015,
+    author = "Maturana, D. and Scherer, S.",
+    title = "{VoxNet: A 3D Convolutional Neural Network for Real-Time Object Recognition}",
+    booktitle = "{IROS}",
+    year = "2015",
+    pdf = "/extra/voxnet_maturana_scherer_iros15.pdf",
+}
+```
 
 ## TODO 
 
@@ -113,3 +123,5 @@ Requires [gizeh](https://github.com/Zulko/gizeh).
 * Testing
 * More options
 * Better visualization
+
+
