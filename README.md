@@ -14,11 +14,11 @@ You will also need [path.py](https://github.com/jaraco/path.py) and
 [scikit-learn](http://scikit-learn.org/stable/). Scikit-learn
 is used purely for evaluation of accuracy and is an easily removable dependency.
 
-
+You can do something like
 ```sh
 git clone git@github.com:dimatura/voxnet.git
 cd voxnet
-python setup.py develop
+pip install --editable .
 ```
 
 

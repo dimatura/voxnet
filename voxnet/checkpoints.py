@@ -26,6 +26,8 @@ def save_weights(fname, l_out, metadata=None):
         tmp_fname = Path(fname.stripext() + '.tmp.npz') # TODO yes, this is a hack
         np.savez_compressed(str(tmp_fname), **param_dict)
         tmp_fname.rename(fname)
+    else:
+        np.savez_compressed(str(fname), **param_dict)
 
 
 def load_weights(fname, l_out):

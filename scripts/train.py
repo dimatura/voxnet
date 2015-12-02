@@ -125,10 +125,13 @@ def main(args):
     model = config_module.get_model()
 
     logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s| %(message)s')
-    mlog = voxnet.metrics_logging.MetricsLogger('metrics.jsonl', reinitialize=True)
+    logging.info('Metrics will be saved to {}'.format(args.metrics_fname))
+    mlog = voxnet.metrics_logging.MetricsLogger(args.metrics_fname, reinitialize=True)
 
+    logging.info('Compiling theano functions...')
     tfuncs, tvars = make_training_functions(cfg, model)
 
+    logging.info('Training...')
     itr = 0
     last_checkpoint_itr = 0
     loader = (data_loader(cfg, args.training_fname))
@@ -171,5 +174,6 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('config_path', type=Path, help='config .py file')
     parser.add_argument('training_fname', type=Path, help='training .tar file')
+    parser.add_argument('--metrics-fname', type=Path, default='metrics.jsonl', help='name of metrics file')
     args = parser.parse_args()
     main(args)
