@@ -27,7 +27,7 @@ pip install --editable .
 ### Get data 
 
 In this example we will use the ModelNet 10 dataset, 
-from the [3D ShapeNet](http://3dshapenets.cs.princeton.edu/) project.
+from the excellent [3D ShapeNet](http://3dshapenets.cs.princeton.edu/) project.
 
 To make our life easier we will use the voxelized version, which
 is included in the source code distribution. Unfortunately,
@@ -59,9 +59,12 @@ python train.py config/shapenet10.py shapenet10_train.tar
 
 `config/shapenet10.py` stores the model architecture
 and hyperparameters related to training as Python code.
-`train.py` loads this code dynamically, compiles the theano model,
+`train.py` loads this code dynamically, compiles the Theano model,
 and begins training with the data from `shapenet10_train.tar`.
-The learned weights are periodically saved to `weights.npz`.
+Note that compiling the Theano model might around a minute
+for the first execution.
+As soon as training begins, metrics will be printed to stdout and
+learned weights are periodically saved to `weights.npz`.
 
 During training (which will take a few hours) you can monitor progress
 visually by by running `scripts/train_reports.py`. Note that this script has a
@@ -123,5 +126,6 @@ Requires [gizeh](https://github.com/Zulko/gizeh).
 * Testing
 * More options
 * Better visualization
+* Use new cudnn 3D capabilities
 
 
