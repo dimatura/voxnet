@@ -49,7 +49,7 @@ def load_weights(fname, l_out):
             else:
                 param.set_value(param_dict[param.name])
         else:
-            logging.warn('unable to load parameter {} from {}'.format(param.name, weights_fname))
+            logging.warn('unable to load parameter {} from {}'.format(param.name, fname))
     if 'metadata' in param_dict:
         metadata = pickle.loads(str(param_dict['metadata']))
     else:
